@@ -7,6 +7,8 @@
  * @File  : observer.php
  * @Desc  : 观察者模式，此时发现一丝java相对于php的优势。
  *        java中直接可以用list<Object>的方式观察者对象
+ *
+ *        现实场景：报纸订阅
  */
 
 /**
