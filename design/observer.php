@@ -5,7 +5,8 @@
  * @Date  : 3/27/21 4:52 PM
  * @Author: shupan
  * @File  : observer.php
- * @Desc  : 观察者模式
+ * @Desc  : 观察者模式，此时发现一丝java相对于php的优势。
+ *        java中直接可以用list<Object>的方式观察者对象
  */
 
 /**
@@ -51,35 +52,24 @@ class CouponObserver implements Observer {
 
 class RegSubject implements Subject {
 
-
-//    private $username;
-//
-//    private $password;
-
     private $user;
 
     private $observers;
 
-
     public function __construct(User $user) {
-//        $this->username = $username;
-//        $this->password = $password;
         $this->user = $user;
         $this->observers = new SplObjectStorage();
     }
 
     public function addObserver(Observer $observer) {
-        // TODO: Implement addObserver() method.
         $this->observers->attach($observer);
     }
 
     public function removeObserver(Observer $observer) {
-        // TODO: Implement removeObserver() method.
         $this->observers->contains($observer) && $this->observers->detach($observer);
     }
 
     public function notifyObservers() {
-        // TODO: Implement notifyObservers() method.
         foreach ($this->observers as $observer) {
             $observer->update($this->user);
         }
@@ -94,7 +84,6 @@ class RegSubject implements Subject {
 
 }
 
-
 class User {
     public $username;
     public $password;
@@ -104,7 +93,6 @@ class User {
         $this->password = $password;
     }
 }
-
 
 $user = new User("shpuan", "123456");
 $reg = new RegSubject($user);
