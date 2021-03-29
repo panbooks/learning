@@ -124,16 +124,28 @@ class MarioStateMachine {
 
     public function printDetail() {
         echo "score:" . $this->score . "\t" . "state:" . get_class($this->state) . "\n";
+        var_dump($this);
     }
 
 }
 
 
 $mario = new MarioStateMachine();
+$mario->printDetail();
+$mario->obtainMushroom();
+$mario->printDetail();
 $mario->obtainMushroom();
 $mario->printDetail();
 $mario->obtainMushroom();
 $mario->printDetail();
+$mario->obtainMushroom();
+$mario->printDetail();
+$mario->obtainMushroom();
+$mario->printDetail();$mario->obtainMushroom();
+$mario->printDetail();$mario->obtainMushroom();
+$mario->printDetail();$mario->obtainMushroom();
+$mario->printDetail();
+
 
 $mario->obtainFireFlower();
 $mario->printDetail();
